@@ -1,5 +1,14 @@
 :root {
-  font: 16px / 1 sans-serif;
+  font: 32px / 1 sans-serif;
+  /* The image used */
+  background-image: url('https://wallpaperplay.com/walls/full/b/5/c/69810.jpg');
+  min-height: 380px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Needed to position the navbar */
+  position: relative;
 }
 
 html {
@@ -7,6 +16,69 @@ html {
 }
 
 body {
-  margin: 0;
-  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Position the navbar container inside the image */
+.container {
+  margin: 20px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  content: '\00bb';
+}
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  border: 1px solid black;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  opacity: 0.2;
+  transition: ease-in-out;
+  transition-property: slide-left;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.img-icon {
+  height: 10rem;
+  width: 13rem;
+  /* border: 1px solid black; */
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#img1 {
+  padding: 0.5rem 0.5rem 1rem 1rem;
+}
+
+#img2 {
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+}
+
+#img3 {
+  padding: 0.5rem 1rem 1rem 0.5rem;
+}
+
+.edit-h1 {
+  text-align: center;
+  list-style: none;
+  padding-top: 0.5rem;
+  text-decoration: none;
 }
