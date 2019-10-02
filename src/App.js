@@ -12,23 +12,6 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div class="container">
-          <div class="topnav">
-            <Link className="Link-Journal" to="/Journal">
-              <header className="edit-h1">Journal</header>
-              {<img id="img1" className="img-icon" src={Jour}></img>}
-            </Link>
-            <Link className="Link-Tasks" to="/Tasks">
-              <header className="edit-h1">To-Do List</header>
-              {<img id="img2" className="img-icon" src={Tas}></img>}
-            </Link>
-            <Link className="Link-Calendar" to="/Calendar">
-              <header className="edit-h1">Calendar</header>
-              {<img id="img3" className="img-icon" src={Cal}></img>}
-            </Link>
-          </div>
-        </div>
-
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/Journal" component={Journal} />
