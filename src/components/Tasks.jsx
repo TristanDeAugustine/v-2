@@ -14,7 +14,8 @@ class App extends React.Component {
     this.setState({ [key]: value })
   }
 
-  addItem() {
+  addItem(e) {
+    e.preventDefault()
     // create a new item with unique id
     const newItem = {
       id: 1 + Math.random(),
@@ -45,51 +46,35 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 className="app-title">MY LIST</h1>
-
-        <div className="container2">
-          <div
-            style={{
-              padding: 30,
-              textAlign: 'left',
-              maxWidth: 500,
-              margin: 'auto'
-            }}
-          >
-            Add an Item...
-            <br />
-            <input
-              type="text"
-              placeholder="Type item here"
-              value={this.state.newItem}
-              onChange={e => this.updateInput('newItem', e.target.value)}
-            />
-            <button
-              className="add-btn btn-floating"
-              onClick={() => this.addItem()}
-              disabled={!this.state.newItem.length}
-            >
-              <i class="material-icons"> + </i>
-            </button>
-            <br /> <br />
-            <ul>
-              {this.state.list.map(item => {
-                return (
-                  <li key={item.id}>
-                    {item.value}
-                    <button
-                      className="btn btn-floating"
-                      onClick={() => this.deleteItem(item.id)}
-                    >
-                      <i class="material-icons">x</i>
-                    </button>
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
-        </div>
+      <div id="myDIV" class="header">
+        <h1> MY LIST</h1>
+        Add an Item...
+        <br></br>
+        <form onSubmit={e => this.addItem(e)}>
+          <input
+            type="text"
+            id="myInput"
+            placeholder="Type item here"
+            value={this.state.newItem}
+            onChange={e => this.updateInput('newItem', e.target.value)}
+          />
+        </form>
+        <br /> <br />
+        <ul id="myUL">
+          {this.state.list.map(item => {
+            return (
+              <li className="checked" key={item.id}>
+                {item.value}
+                <button
+                  className="btn"
+                  onClick={() => this.deleteItem(item.id)}
+                >
+                  <i className="material-icons">x</i>
+                </button>
+              </li>
+            )
+          })}
+        </ul>
       </div>
     )
   }
